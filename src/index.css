@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply antialiased bg-nova-cream;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F0EAE2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C4956A;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A0744A;
+}
+
+/* Line clamp utilities */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-5 {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Nova logo smooth rotation */
+.nova-logo-spin {
+  will-change: transform;
+  transition: transform 0.05s linear;
+}
+
+/* Pulse glow for logo */
+@keyframes nova-glow {
+  0%, 100% { filter: drop-shadow(0 0 4px rgba(107, 155, 191, 0.5)); }
+  50%       { filter: drop-shadow(0 0 10px rgba(107, 155, 191, 0.9)); }
+}
+
+.nova-logo-glow {
+  animation: nova-glow 3s ease-in-out infinite;
+}
